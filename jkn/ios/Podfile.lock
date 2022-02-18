@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - vertical_scrollable_tabview (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - vertical_scrollable_tabview (from `.symlinks/plugins/vertical_scrollable_tabview/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  vertical_scrollable_tabview:
+    :path: ".symlinks/plugins/vertical_scrollable_tabview/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  vertical_scrollable_tabview: 6e6f25411f226cc077ac4d915c8cd407a1317587
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1
