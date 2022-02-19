@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jkn/components/drawer/custom_drawer.dart';
+import 'package:jkn/configs/colors.dart';
 import 'package:jkn/plugins/color.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // 背景色
-      backgroundColor: HexColor('1c252e'),
+      backgroundColor: AppColor.backGroundColor,
       extendBodyBehindAppBar: true,
       // appBar
       appBar: AppBar(

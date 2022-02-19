@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:jkn/configs/colors.dart';
 
 import 'bottom_user_info.dart';
 import 'custom_list_tile.dart';
@@ -31,7 +32,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             bottomRight: Radius.circular(10),
             topRight: Radius.circular(10),
           ),
-          color: Color.fromRGBO(20, 20, 20, 1),
+          color: AppColor.backGroundColor,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
