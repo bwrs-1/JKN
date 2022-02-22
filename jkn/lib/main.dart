@@ -1,10 +1,20 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-// コンポーネント
-import ' widgets /home.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:jkn/components/drawer/custom_drawer.dart';
+import 'package:jkn/configs/colors.dart';
+import 'package:jkn/plugins/color.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart' as cloud_firestore;
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -33,19 +43,43 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  // 変数
+  String? data = "";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Body
-      body: HomeScreen(),
+      // 背景色
+      backgroundColor: AppColor.backGroundColor,
+      extendBodyBehindAppBar: true,
+      // appBar
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      ),
+      // drawer
+      drawer: const CustomDrawer(),
+      // body
+      body: StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          return ListView(
+            children: snapshot.data!.docs.map((DocumentSnapshot document) {
+              return ListTile(
+                leading: Image.network(
+                  document.get('img'),
+                  fit: BoxFit.cover,
+                ),
+                title: Text(document.get('user')),
+                subtitle: Text(document.get('msg')),
+                isThreeLine: true,
+                // onTap: () {},
+              );
+            }).toList(),
+          );
+        },
+      ),
     );
   }
 }

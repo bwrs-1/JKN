@@ -35,7 +35,7 @@ class BottomUserInfo extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.network(
-                          'https://www.sprout-dance.com/_data/image/924675157589571_1423784545_1_1.jpg',
+                          'https://firebasestorage.googleapis.com/v0/b/jkn-app.appspot.com/o/userImg%2F924675157589571_1423784545_1_1.jpg?alt=media&token=5fbfffe1-ef00-4210-8682-2c1a97ec95c1',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -106,7 +106,7 @@ class BottomUserInfo extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Image.network(
-                        'https://t3.ftcdn.net/jpg/02/99/21/98/360_F_299219888_2E7GbJyosu0UwAzSGrpIxS0BrmnTCdo4.jpg',
+                        'https://firebasestorage.googleapis.com/v0/b/jkn-app.appspot.com/o/userImg%2F924675157589571_1423784545_1_1.jpg?alt=media&token=5fbfffe1-ef00-4210-8682-2c1a97ec95c1',
                         fit: BoxFit.cover,
                       ),
                     ),

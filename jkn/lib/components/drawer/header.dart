@@ -18,10 +18,10 @@ class CustomDrawerHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network(
-            'https://www.sprout-dance.com/_data/image/924675157589571_1423784545_1_1.jpg',
-            fit: BoxFit.cover,
-          ),
+          // Image.network(
+          //   'https://firebasestorage.googleapis.com/v0/b/jkn-app.appspot.com/o/h1ulwq8s1TGrv6R1645187557_1645187565.png?alt=media&token=1305a385-1a8c-4a37-b2e3-dd728227df6e',
+          //   fit: BoxFit.cover,
+          // ),
           if (isColapsed) const SizedBox(width: 10),
           if (isColapsed)
             const Expanded(
