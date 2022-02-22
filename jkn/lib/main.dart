@@ -46,6 +46,19 @@ class _MyHomePageState extends State<MyHomePage> {
   // 変数
   String? data = "";
 
+  final PageController _pageCtr = PageController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _pageCtr.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,25 +74,89 @@ class _MyHomePageState extends State<MyHomePage> {
       // drawer
       drawer: const CustomDrawer(),
       // body
-      body: StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection('posts').snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          return ListView(
-            children: snapshot.data!.docs.map((DocumentSnapshot document) {
-              return ListTile(
-                leading: Image.network(
-                  document.get('img'),
-                  fit: BoxFit.cover,
-                ),
-                title: Text(document.get('user')),
-                subtitle: Text(document.get('msg')),
-                isThreeLine: true,
-                // onTap: () {},
-              );
-            }).toList(),
-          );
-        },
+      body: PageView(
+        controller: _pageCtr,
+        children: [
+          TimeLine(),
+          SecondPage(),
+          ThirdPage(),
+        ],
       ),
+      // body: StreamBuilder<QuerySnapshot>(
+      //   stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+      //   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+      //     return ListView(
+      //       children: snapshot.data!.docs.map((DocumentSnapshot document) {
+      //         return ListTile(
+      //           leading: Image.network(
+      //             document.get('img'),
+      //             fit: BoxFit.cover,
+      //           ),
+      //           title: Text(document.get('user')),
+      //           subtitle: Text(document.get('msg')),
+      //           isThreeLine: true,
+      //           // onTap: () {},
+      //         );
+      //       }).toList(),
+      //     );
+      //   },
+      // ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: (() {}),
+      //   tooltip: 'Action!',
+      //   label: const Text(
+      //     'HYPE',
+      //     style: TextStyle(
+      //       fontSize: 20,
+      //       fontWeight: FontWeight.bold,
+      //     ),
+      //   ),
+      //   icon: const Icon(Icons.chat_bubble_outline),
+      //   backgroundColor: Color.fromARGB(255, 207, 207, 207),
+      // ),
+    );
+  }
+}
+
+class TimeLine extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        return ListView(
+          children: snapshot.data!.docs.map((DocumentSnapshot document) {
+            return ListTile(
+              leading: Image.network(
+                document.get('img'),
+                fit: BoxFit.cover,
+              ),
+              title: Text(document.get('user')),
+              subtitle: Text(document.get('msg')),
+              isThreeLine: true,
+              // onTap: () {},
+            );
+          }).toList(),
+        );
+      },
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.deepOrange,
+    );
+  }
+}
+
+class ThirdPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.blueAccent,
     );
   }
 }

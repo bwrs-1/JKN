@@ -22,32 +22,41 @@ class CustomDrawerHeader extends StatelessWidget {
           //   'https://firebasestorage.googleapis.com/v0/b/jkn-app.appspot.com/o/h1ulwq8s1TGrv6R1645187557_1645187565.png?alt=media&token=1305a385-1a8c-4a37-b2e3-dd728227df6e',
           //   fit: BoxFit.cover,
           // ),
-          if (isColapsed) const SizedBox(width: 10),
-          if (isColapsed)
-            const Expanded(
-              flex: 3,
-              child: Text(
-                'JKN',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-                maxLines: 1,
-              ),
+          Text(
+            'JKN',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
             ),
-          if (isColapsed) const Spacer(),
-          if (isColapsed)
-            Expanded(
-              flex: 1,
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.search,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            maxLines: 1,
+          ),
+          // if (isColapsed) const SizedBox(width: 10),
+          // if (isColapsed)
+          //   const Expanded(
+          //     flex: 3,
+          //     child: Text(
+          //       'JKN',
+          //       style: TextStyle(
+          //         color: Colors.white,
+          //         fontWeight: FontWeight.bold,
+          //         fontSize: 20,
+          //       ),
+          //       maxLines: 1,
+          //     ),
+          //   ),
+          // if (isColapsed) const Spacer(),
+          // if (isColapsed)
+          //   Expanded(
+          //     flex: 1,
+          //     child: IconButton(
+          //       onPressed: () {},
+          //       icon: const Icon(
+          //         Icons.search,
+          //         color: Colors.white,
+          //       ),
+          //     ),
+          //   ),
         ],
       ),
     );

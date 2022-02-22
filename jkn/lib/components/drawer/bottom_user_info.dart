@@ -76,19 +76,19 @@ class BottomUserInfo extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  Expanded(
-                    flex: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.logout,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Expanded(
+                  //   flex: 2,
+                  //   child: Padding(
+                  //     padding: const EdgeInsets.only(right: 10),
+                  //     child: IconButton(
+                  //       onPressed: () {},
+                  //       icon: const Icon(
+                  //         Icons.logout,
+                  //         color: Colors.white,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             )
@@ -112,16 +112,16 @@ class BottomUserInfo extends StatelessWidget {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.logout,
-                      color: Colors.white,
-                      size: 18,
-                    ),
-                  ),
-                ),
+                // Expanded(
+                //   child: IconButton(
+                //     onPressed: () {},
+                //     icon: const Icon(
+                //       Icons.logout,
+                //       color: Colors.white,
+                //       size: 18,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
     );
