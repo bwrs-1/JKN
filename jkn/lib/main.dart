@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:jkn/components/drawer/custom_drawer.dart';
+// import 'package:jkn/components/drawer/custom_drawer.dart';
 import 'package:jkn/configs/colors.dart';
 import 'package:jkn/plugins/color.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart' as cloud_firestore;
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+
+import 'components/drawer/header.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -72,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.transparent,
       ),
       // drawer
-      drawer: const CustomDrawer(),
+      // drawer: const CustomDrawerHeader(isCollapsed: null,),
       // body
       body: PageView(
         controller: _pageCtr,
